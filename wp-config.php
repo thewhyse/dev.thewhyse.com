@@ -73,6 +73,7 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 	define('WP_DEBUG', false);
 }
 
+define( 'PH_SECURE_AUTH_KEY', ' v1E?+m%~?Nv&pMaDQAR9-R7d+47A6zJ,m2Vc*-st8wC01P2GES;z,_cgF^< lKN' );
 /* That's all, stop editing! Happy Pressing. */
 
 

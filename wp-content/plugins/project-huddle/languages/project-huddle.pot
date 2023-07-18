@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: assets/js/src/app/utility/matching.js:183
+msgid "The original screen selector timed out, so a screen position is being used"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:219
+msgid "Exact Match"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:220
+msgid "The specific css selector was matched exactly."
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:247
+msgid "xPath"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:248
+msgid ""
+"The content was found using an xPath which ignores class and ids uses only "
+"a tag hierarchy. Likely, classes and ids on the page have changed but "
+"structure has not."
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:267
+msgid "Last Selector"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:269
+msgid ""
+"The css class and tag was found on the page with matching content. Likely, "
+"the element was moved from it's original or parent selectors changed."
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:294
+msgid "Parents"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:295
+msgid "A match was found by bubbling up the dom tree, but is likely inaccurate."
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:315
+msgid "Screen Position"
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:317
+msgid ""
+"The original css selector was not found, nor was the content found to be a "
+"close enough match on the page. An approximate screen position is used."
+msgstr ""
+
+#: assets/js/src/app/utility/matching.js:321
+msgid "Position"
+msgstr ""
+
+#: assets/js/src/wizard/pages/Branding.vue:120
+#: assets/js/src/wizard/pages/Email.vue:291
+#: assets/js/src/wizard/pages/Welcome.vue:90
+msgid "An error has occurred. Please reach out to support@projecthuddle.com"
+msgstr ""
