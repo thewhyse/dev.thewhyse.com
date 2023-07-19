@@ -1,0 +1,91 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/* Dam Action Lists */
+ul.dam-actions-list {
+    padding: 0px;
+    margin: 0px;
+    vertical-align: middle;
+}
+.dam-actions-list li,
+.dam-token-li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #3e3e3e;
+    padding: 5px;
+    margin-left: 5px;
+}
+.dam-actions-list li:hover,
+.dam-actions-list li:active,
+.dam-actions-list li:focus,
+.dam-token-li:hover,
+.dam-token-li:active,
+.dam-token-li:focus {
+	background-color: #2271b1;
+    border-color: #2271b1;	
+}
+
+.dam-actions-list li:hover a::before,
+.dam-actions-list li:active a::before,
+.dam-actions-list li:focus a::before,
+.dam-token-li:hover a::before,
+.dam-token-li:active a::before,
+.dam-token-li:focus a::before {
+	color: #fff;
+}
+.dam-actions-list li:hover a,
+.dam-actions-list li:active a,
+.dam-actions-list li:focus a,
+.dam-token-li:hover a,
+.dam-token-li:active a,
+.dam-token-li:focus a {
+    outline: none;
+}
+.taxonomy-dam_token.column-taxonomy-dam_token {
+    color: transparent;
+}
+.taxonomy-dam_token.column-taxonomy-dam_token .dam-token-li {
+    margin-left: -2px;
+}
+
+/* License key Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -75px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+  }
