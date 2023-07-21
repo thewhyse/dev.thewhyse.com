@@ -1,0 +1,260 @@
+@import "../../../../css/_mixins.scss";
+@import "../../../../css/_trx_addons.vars.scss";
+@import "../../../../css/_trx_addons.colors.scss";
+
+.sc_igenerator_form {
+	@include flex;
+	@include flex-direction(row);
+	@include flex-justify-content(center);
+	@include flex-align-items(flex-start);
+	position: relative;
+
+	&.sc_igenerator_form_align_left {
+		@include flex-justify-content(flex-start);
+	}
+	&.sc_igenerator_form_align_right {
+		@include flex-justify-content(flex-end);
+	}
+	.trx_addons_loading {
+		@include abs-cover;
+		background-color: rgba(255, 255, 255, 0.5);
+		z-index: 100;
+		display: none;
+	}
+	&.sc_igenerator_form_loading {
+		.trx_addons_loading {
+			display: block;
+		}
+	}
+}
+.sc_igenerator_form_inner {
+	width: 100%;
+	@include flex;
+	@include flex-direction(column);
+	@include flex-justify-content(flex-start);
+	@include flex-align-items(center);
+
+	.sc_igenerator_form_align_left & {
+		@include flex-align-items(flex-start);
+	}
+	.sc_igenerator_form_align_right & {
+		@include flex-align-items(flex-end);
+	}
+}
+
+.sc_igenerator_form_field_prompt {
+	position: relative;
+	width: 100%;
+	@include border-box;
+	@include flex;
+	@include flex-direction(row);
+	@include flex-justify-content(space-between);
+	@include flex-align-items(justify);
+
+	.sc_igenerator_form_field_inner {
+		position: relative;
+		width: 100%;
+	}
+	input[type="text"] {
+		width: 100%;
+		@include border-radius(6px);
+		@include border-box;
+		padding-right: 9em;
+		text-overflow: ellipsis;
+	}
+	.sc_igenerator_form_field_prompt_button {
+		@include flex;
+		@include flex-direction(row);
+		@include flex-justify-content(center);
+		@include flex-align-items(center);
+		@include abs-pos( 4px, 4px, 4px, auto );
+		@include border-box;
+		@include border-radius(6px);
+		@include transition-properties(background-color, color);
+		max-width: 50%;
+		overflow: hidden;
+		padding: 0 2em;
+		background-color: $success_color;
+		color: #fff;
+
+		&:not(.sc_igenerator_form_field_prompt_button_disabled):hover {
+			background-color: $success_hover;
+		}
+	}
+	.sc_igenerator_form_field_prompt_button_disabled {
+		background-color: $success_bg_color;
+		color: #aaa;
+		cursor: default;
+	}
+}
+
+.sc_igenerator_form_settings_button {
+	@include flex;
+	@include flex-direction(column);
+	@include flex-justify-content(center);
+	@include flex-align-items(center);
+	@include border-box;
+	@include border-radius(6px);
+	font-size: 1.25em;
+	width: 4em;
+	margin-left: 2px;
+	background-color: #e7eaed;
+	color: #222;
+}
+.sc_igenerator_form_settings_button:hover,
+.sc_igenerator_form_settings_button:focus {
+	background-color: #e7eaed;
+	color: #222;
+}
+.sc_igenerator_form_settings {
+	@include abs-rt( 0, 4.3em, 100 );
+	@include border-box;
+	@include border-radius(6px);
+	padding: 1em;
+	background-color: #e7eaed;
+	color: #222;
+	@include transition-properties( opacity, transform );
+	will-change: opacity, transform;
+	opacity: 0;
+	@include translateY( 20% );
+	pointer-events: none;
+
+	input[type="radio"] {
+		margin-right: 0.3em;
+	}
+}
+.sc_igenerator_form_settings_show {
+	opacity: 1;
+	@include translateY(0);
+	pointer-events: auto;
+}
+
+.sc_igenerator_form_field_tags {
+	@include flex;
+	@include flex-direction(row);
+	@include flex-justify-content(center);
+	@include flex-align-items(flex-start);
+	margin-top: 1em;
+}
+.sc_igenerator_form_field_tags_label {
+	white-space: nowrap;
+	padding: 0.5em 1em 0.5em 0;
+}
+.sc_igenerator_form_field_tags_list {
+	@include flex;
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	@include flex-justify-content(flex-start);
+	@include flex-align-items(flex-start);
+}
+.sc_igenerator_form_field_tags_item {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 0.5em 0.5em 0;
+	padding: 0.5em 1.5em;
+	background-color: $background_light;
+	color: $text_light;
+	@include border-radius(3px);
+	@include border-box;
+
+	&:hover {
+		color: $text_dark;
+		background-color: $background_color;
+	}
+}
+
+.sc_igenerator_message {
+	@include border-radius(6px);
+	@include border-box;
+	padding: 2em;
+	background-color: $error_color;
+	color: #fff;
+	@include abs-cc(100);
+	@include transition-properties(margin-top, opacity);
+	margin-top: -100%;
+	will-change: margin-top, opacity;
+	opacity: 0;
+	text-align: center;
+	pointer-events: none;
+
+	p {
+		margin: 0;
+	}
+	p + p {
+		margin-top: 1em;
+	}
+	p:first-child {
+		font-size: 1.15em;
+		font-weight: 700;
+	}
+}
+.sc_igenerator_message_show {
+	opacity: 1;
+	margin-top: 0;
+	pointer-events: auto;
+}
+
+.sc_igenerator_images {
+	margin-top: 1.5em;
+	display: none;
+}
+
+.sc_igenerator_image_inner {
+	position: relative;
+}
+
+
+.sc_igenerator_image_fetch {
+	min-height: 15em;
+}
+.sc_igenerator_image_fetch_info {
+	@include abs-pos(auto, 10px, 10px, 10px);
+	@include border-box;
+	padding: 0 1em 1em;
+	@include flex;
+	@include flex-direction(column);
+	@include flex-justify-content(flex-start);
+	@include flex-align-items(center);
+}
+.sc_igenerator_image_fetch_msg {
+	display: block;
+	text-decoration: none;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	font-weight: bold;
+	// Commented to preserve the original color from the theme
+	//color: $text_dark;
+}
+.sc_igenerator_image_fetch_progress {
+	display: block;
+	margin-top: 10px;
+	@include box(50%, 4px);
+	//border: 1px solid $text_light;
+	background-color: $text_light;
+	overflow: hidden;
+}
+.sc_igenerator_image_fetch_progressbar {
+	display: block;
+	@include box(50%, 4px);
+	background-color: $warning_color;
+	@include animation(sc_igenerator_image_fetch_progress_animation 1.5s linear infinite);
+	will-change: transform;
+}
+
+@-webkit-keyframes sc_igenerator_image_fetch_progress_animation { 
+	0% {
+		@include translateX(-110%);
+	}
+	100% {
+		@include translateX(210%);
+	}
+}
+
+@keyframes sc_igenerator_image_fetch_progress_animation { 
+	0% {
+		@include translateX(-110%);
+	}
+	100% {
+		@include translateX(210%);
+	}
+}

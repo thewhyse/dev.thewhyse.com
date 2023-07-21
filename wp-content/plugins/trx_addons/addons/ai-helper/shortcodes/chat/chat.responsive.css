@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+  /* AI Chat */
+  .sc_chat_form_field_prompt .sc_chat_form_field_prompt_button {
+    padding: 0 1em;
+  }
+
+  .sc_chat_message {
+    width: 75%;
+  }
+}
+
+/*# sourceMappingURL=chat.responsive.css.map */

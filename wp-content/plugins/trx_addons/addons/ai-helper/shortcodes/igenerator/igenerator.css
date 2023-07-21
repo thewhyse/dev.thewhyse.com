@@ -1,0 +1,404 @@
+.sc_igenerator_form {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  position: relative;
+}
+.sc_igenerator_form.sc_igenerator_form_align_left {
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+.sc_igenerator_form.sc_igenerator_form_align_right {
+  -webkit-justify-content: flex-end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.sc_igenerator_form .trx_addons_loading {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 100;
+  display: none;
+}
+.sc_igenerator_form.sc_igenerator_form_loading .trx_addons_loading {
+  display: block;
+}
+
+.sc_igenerator_form_inner {
+  width: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.sc_igenerator_form_align_left .sc_igenerator_form_inner {
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.sc_igenerator_form_align_right .sc_igenerator_form_inner {
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.sc_igenerator_form_field_prompt {
+  position: relative;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+  -webkit-align-items: justify;
+  -ms-flex-align: justify;
+  align-items: justify;
+}
+.sc_igenerator_form_field_prompt .sc_igenerator_form_field_inner {
+  position: relative;
+  width: 100%;
+}
+.sc_igenerator_form_field_prompt input[type="text"] {
+  width: 100%;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 9em;
+  text-overflow: ellipsis;
+}
+.sc_igenerator_form_field_prompt .sc_igenerator_form_field_prompt_button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  left: auto;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -ms-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 50%;
+  overflow: hidden;
+  padding: 0 2em;
+  background-color: #38bb7a;
+  color: #fff;
+}
+.sc_igenerator_form_field_prompt .sc_igenerator_form_field_prompt_button:not(.sc_igenerator_form_field_prompt_button_disabled):hover {
+  background-color: #32a86e;
+}
+.sc_igenerator_form_field_prompt .sc_igenerator_form_field_prompt_button_disabled {
+  background-color: #e4f7ed;
+  color: #aaa;
+  cursor: default;
+}
+
+.sc_igenerator_form_settings_button {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  font-size: 1.25em;
+  width: 4em;
+  margin-left: 2px;
+  background-color: #e7eaed;
+  color: #222;
+}
+
+.sc_igenerator_form_settings_button:hover,
+.sc_igenerator_form_settings_button:focus {
+  background-color: #e7eaed;
+  color: #222;
+}
+
+.sc_igenerator_form_settings {
+  position: absolute;
+  z-index: 100;
+  top: 4.3em;
+  right: 0;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  padding: 1em;
+  background-color: #e7eaed;
+  color: #222;
+  -webkit-transition: opacity 0.3s ease, transform 0.3s ease;
+  -ms-transition: opacity 0.3s ease, transform 0.3s ease;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  will-change: opacity, transform;
+  opacity: 0;
+  -webkit-transform: translateY(20%);
+  -ms-transform: translateY(20%);
+  transform: translateY(20%);
+  pointer-events: none;
+}
+.sc_igenerator_form_settings input[type="radio"] {
+  margin-right: 0.3em;
+}
+
+.sc_igenerator_form_settings_show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.sc_igenerator_form_field_tags {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+.sc_igenerator_form_field_tags_label {
+  white-space: nowrap;
+  padding: 0.5em 1em 0.5em 0;
+}
+
+.sc_igenerator_form_field_tags_list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.sc_igenerator_form_field_tags_item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0.5em 0.5em 0;
+  padding: 0.5em 1.5em;
+  background-color: #f8f8f9;
+  color: #9099a2;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.sc_igenerator_form_field_tags_item:hover {
+  color: #23282d;
+  background-color: #f0f1f2;
+}
+
+.sc_igenerator_message {
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2em;
+  background-color: #f04c49;
+  color: #fff;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: margin-top 0.3s ease, opacity 0.3s ease;
+  -ms-transition: margin-top 0.3s ease, opacity 0.3s ease;
+  transition: margin-top 0.3s ease, opacity 0.3s ease;
+  margin-top: -100%;
+  will-change: margin-top, opacity;
+  opacity: 0;
+  text-align: center;
+  pointer-events: none;
+}
+.sc_igenerator_message p {
+  margin: 0;
+}
+.sc_igenerator_message p + p {
+  margin-top: 1em;
+}
+.sc_igenerator_message p:first-child {
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.sc_igenerator_message_show {
+  opacity: 1;
+  margin-top: 0;
+  pointer-events: auto;
+}
+
+.sc_igenerator_images {
+  margin-top: 1.5em;
+  display: none;
+}
+
+.sc_igenerator_image_inner {
+  position: relative;
+}
+
+.sc_igenerator_image_fetch {
+  min-height: 15em;
+}
+
+.sc_igenerator_image_fetch_info {
+  position: absolute;
+  z-index: 1;
+  top: auto;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 1em 1em;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.sc_igenerator_image_fetch_msg {
+  display: block;
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  font-weight: bold;
+}
+
+.sc_igenerator_image_fetch_progress {
+  display: block;
+  margin-top: 10px;
+  width: 50%;
+  height: 4px;
+  background-color: #9099a2;
+  overflow: hidden;
+}
+
+.sc_igenerator_image_fetch_progressbar {
+  display: block;
+  width: 50%;
+  height: 4px;
+  background-color: #f0b849;
+  -webkit-animation: sc_igenerator_image_fetch_progress_animation 1.5s linear infinite;
+  -ms-animation: sc_igenerator_image_fetch_progress_animation 1.5s linear infinite;
+  animation: sc_igenerator_image_fetch_progress_animation 1.5s linear infinite;
+  will-change: transform;
+}
+
+@-webkit-keyframes sc_igenerator_image_fetch_progress_animation {
+  0% {
+    -webkit-transform: translateX(-110%);
+    -ms-transform: translateX(-110%);
+    transform: translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateX(210%);
+    -ms-transform: translateX(210%);
+    transform: translateX(210%);
+  }
+}
+@keyframes sc_igenerator_image_fetch_progress_animation {
+  0% {
+    -webkit-transform: translateX(-110%);
+    -ms-transform: translateX(-110%);
+    transform: translateX(-110%);
+  }
+  100% {
+    -webkit-transform: translateX(210%);
+    -ms-transform: translateX(210%);
+    transform: translateX(210%);
+  }
+}
+
+/*# sourceMappingURL=igenerator.css.map */

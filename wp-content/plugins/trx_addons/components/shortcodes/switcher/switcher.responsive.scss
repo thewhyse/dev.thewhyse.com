@@ -1,0 +1,51 @@
+@import "../../../css/_mixins.scss";
+@import "../../../css/_trx_addons.vars.scss";
+
+@media #{$media_md} {
+	/* Switcher Tabs */
+	.sc_switcher_tabs_controls {
+		margin-bottom: 1.5em;
+	}
+	.sc_switcher_tab {
+		padding: 1.5em;
+
+		& + & {
+			margin-left: 1.5em;
+		}
+	}
+}
+
+@media #{$media_sm} {
+	/* Switcher Tabs */
+	.sc_switcher_tabs_controls {
+		flex-wrap: wrap;
+		margin-left: -2px;
+		margin-right: -2px;
+	}
+	.sc_switcher_tab {
+		width: calc( 50% - 4px );
+		flex-grow: 1;
+
+		&,
+		& + & {
+			margin: 2px;
+		}
+	}
+}
+
+@media #{$media_xs} {	
+	/* Switcher Tabs */
+	.sc_switcher_tabs_controls {
+		display: block;
+		margin: 0 0 10px;
+	}
+	.sc_switcher_tab {
+		width: 100%;
+		& {
+			margin: 0;
+		}
+		& + & {
+			margin: 10px 0 0 0;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@import "../../../../css/_mixins.scss";
+@import "../../../../css/_trx_addons.vars.scss";
+
+//@mixin sc_chat--sm() {
+@media #{$media_sm} {
+    /* AI Chat */
+	.sc_chat_form_field_prompt {
+		.sc_chat_form_field_prompt_button {
+			padding: 0 1em;
+		}
+	}
+	.sc_chat_message {
+		width: 75%;
+	}
+}

@@ -1,0 +1,23 @@
+@import "../../../../css/_mixins.scss";
+@import "../../../../css/_trx_addons.vars.scss";
+
+//@mixin sc_tgenerator--sm() {
+@media #{$media_sm} {
+    /* TGenerator */
+	.sc_tgenerator_form_field_process,
+	.sc_tgenerator_form_field_tone,
+	.sc_tgenerator_form_field_language {
+		.sc_tgenerator_form_field_select_options {
+			left: auto;
+			right: 0;
+		}
+	}
+	.sc_tgenerator_form_field_prompt {
+		.sc_tgenerator_form_field_prompt_button {
+			padding: 0 1em;
+		}
+	}
+	.sc_tgenerator_message {
+		width: 75%;
+	}
+}

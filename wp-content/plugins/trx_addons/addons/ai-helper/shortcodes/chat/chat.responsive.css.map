@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAIA,yBAAoB;EAChB,aAAa;EAEf,4DAAkC;IACjC,OAAO,EAAE,KAAK;;;EAGhB,gBAAiB;IAChB,KAAK,EAAE,GAAG",
+"sources": ["chat.responsive.scss"],
+"names": [],
+"file": "chat.responsive.css"
+}
