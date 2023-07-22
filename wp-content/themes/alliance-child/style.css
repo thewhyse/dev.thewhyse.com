@@ -11,5 +11,27 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-/* =Theme customization starts here
+/* Theme customization starts here
 -------------------------------------------------------------- */
+
+body.menu_side_present .footer_wrap {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sc_layouts_menu_item_description {
+    display: block;
+    margin-top: -2px;
+    font-size: 8px;
+    line-height: 8px;
+    white-space: normal;
+    margin-left: 4px;
+}
+.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-item:before,
+.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-parent:before,
+.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-ancestor:before {
+    box-shadow: 0px 0px 15px #00000025;
+    -webkit-border-radius: 100%;
+    -ms-border-radius: 100%;
+    border-radius: 100%;
+}

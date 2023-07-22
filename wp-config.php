@@ -1,4 +1,5 @@
 <?php
+
 /**
  * This config file is yours to hack on. It will work out of the box on Pantheon
  * but you may find there are a lot of neat tricks to be used here.
@@ -10,8 +11,10 @@
 /**
  * Pantheon platform settings. Everything you need should already be set.
  */
+
 if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['PANTHEON_ENVIRONMENT'])) {
 	require_once(dirname(__FILE__) . '/wp-config-pantheon.php');
+
 /**
  * Local configuration information.
  *
@@ -19,6 +22,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * keep your config separate, we recommend using a 'wp-config-local.php' file,
  * which you should also make sure you .gitignore.
  */
+
 } elseif (file_exists(dirname(__FILE__) . '/wp-config-local.php') && !isset($_ENV['PANTHEON_ENVIRONMENT'])){
 	# IMPORTANT: ensure your local config does not include wp-settings.php
 	require_once(dirname(__FILE__) . '/wp-config-local.php');
@@ -44,6 +48,7 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
 	define('LOGGED_IN_SALT',   'put your unique phrase here');
 	define('NONCE_SALT',       'put your unique phrase here');
 }
+
 /** Standard wp-config.php stuff from here on down. **/
 /**
  * WordPress Database Table prefix.
@@ -51,7 +56,9 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
  * You can have multiple installations in one database if you give each a unique
  * prefix. Only numbers, letters, and underscores please!
  */
+
 $table_prefix = 'wp_';
+
 /**
  * For developers: WordPress debugging mode.
  *
@@ -62,13 +69,20 @@ $table_prefix = 'wp_';
  * You may want to examine $_ENV['PANTHEON_ENVIRONMENT'] to set this to be
  * "true" in dev, but false in test and live.
  */
+
 if ( ! defined( 'WP_DEBUG' ) ) {
-	define('WP_DEBUG', false);
+	define( 'WP_DEBUG', false );
 }
+
+define( 'WP CACHE', true );
+define( 'WP_MEMORY_LIMIT', '1024M' );
 define( 'PH_SECURE_AUTH_KEY', ' v1E?+m%~?Nv&pMaDQAR9-R7d+47A6zJ,m2Vc*-st8wC01P2GES;z,_cgF^< lKN' );
+
 /* That's all, stop editing! Happy Pressing. */
+
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
+
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
