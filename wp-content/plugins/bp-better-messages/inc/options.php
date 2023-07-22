@@ -47,6 +47,7 @@ class Better_Messages_Options
             'messagesStatusList'          => '0',
             'messagesStatusDetailed'      => '0',
             'allowDeleteMessages'         => '0',
+            'deleteMethod'                => 'delete',
             'fastStart'                   => '1',
             'miniThreadsEnable'           => '0',
             'miniFriendsEnable'           => '0',
@@ -205,7 +206,8 @@ class Better_Messages_Options
             'pinnedThreads'                 => '1',
             'bpAppPush'                     => '0',
             'guestChat'                   => '0',
-            'callQuality'                  => '720'
+            'callQuality'                  => '720',
+            'deleteMessagesOnUserDelete'  => '0'
         );
 
         $args = get_option( 'bp-better-chat-settings', array() );
@@ -814,6 +816,15 @@ class Better_Messages_Options
         if( ! isset( $settings['guestChat'] ) ) {
             $settings['guestChat'] = '0';
         }
+
+        if( ! isset( $settings['deleteMessagesOnUserDelete'] ) ){
+            $settings['deleteMessagesOnUserDelete'] = '0';
+        }
+
+        if( ! isset( $settings['deleteMethod'] ) || $settings['deleteMethod'] !== 'replace' ) {
+            $settings['deleteMethod'] = 'delete';
+        }
+
 
         if( ! isset( $settings['callQuality'] ) || ! in_array($settings['callQuality'], [ '360', '540', '720', '1080' ]) ) {
             $settings['callQuality'] = '720';

@@ -4,7 +4,7 @@ Tags: BuddyPress, Ultimate Member, private message, chat, messaging, messages
 Requires at least: 5.9.0
 Tested up to: 6.3
 Requires PHP: 7.1
-Stable tag: 2.1.22
+Stable tag: 2.1.23
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -162,6 +162,12 @@ You can translate plugin to your language with LocoTranslate or [participate in 
 1. Files attachments
 
 == Changelog ==
+
+= 2.1.23 =
+* Minor animation improvement on page load when there is no enough space to show side column
+* Added option to replace messages content with "This message was deleted" label instead of complete message deletion
+* Added option to delete user messages when user account is deleted from website
+* Other bugfixes and improvements
 
 = 2.1.22 =
 * Tuned edited messages indication icon to show correctly when date is shown at the start of messages stack

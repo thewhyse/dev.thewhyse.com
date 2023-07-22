@@ -458,6 +458,7 @@ _x('Failed to subscribe to Web Push notifications. Please ensure that your web b
 _x('Successfully unsubscribed from Web Push notifications', 'Push Notifications', 'bp-better-messages');
 __('Continue', 'bp-better-messages');
 _x('Attachments uploading...', 'Message content attachments placeholder', 'bp-better-messages');
+__('This message was deleted', 'bp-better-messages');
 _x('Message hidden', 'Messages from blocked user', 'bp-better-messages');
 _nx('%s attachment', '%s attachments', variable, 'Conversations list item', 'bp-better-messages');
 _x('Default', 'Media Inputs', 'bp-better-messages');

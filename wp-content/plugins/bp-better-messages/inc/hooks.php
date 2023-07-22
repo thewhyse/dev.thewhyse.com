@@ -308,26 +308,26 @@ if ( !class_exists( 'Better_Messages_Hooks' ) ):
 
             add_filter( 'better_messages_message_content_before_save', 'bp_messages_filter_kses', 1 );
 
-            //add_filter( 'gettext_freemius', array($this, 'override_freemius_language'), 10, 3 );
-            //add_filter( 'nonce_life', array( $this, 'nonce_lifespan' ), 5, 2 );
+            add_action( 'deleted_user', array( $this, 'wp_on_deleted_user' ), 10, 3 );
+            add_action( 'better_messages_on_deleted_user', array( $this, 'bm_on_deleted_user'), 10, 1 );
         }
 
-        public function override_freemius_language( $translation, $text, $domain ){
-            return $text;
-        }
-
-        public function nonce_lifespan( $duration, $action ){
-            if( ! is_user_logged_in() ) return $duration;
-            if( $action !== 'wp_rest' ) return $duration;
-            if( is_admin() ) return $duration;
-
-            $min_duration = 7 * DAY_IN_SECONDS;
-
-            if( $min_duration > $duration ){
-                $duration = $min_duration;
+        public function wp_on_deleted_user( $user_id, $reassign, $user ){
+            if( Better_Messages()->settings['deleteMessagesOnUserDelete'] === '1' && ! wp_get_scheduled_event( 'better_messages_on_deleted_user', [ $user_id ] ) ){
+                wp_schedule_single_event( time(), 'better_messages_on_deleted_user', [ $user_id ] );
             }
+        }
 
-            return $duration;
+        public function bm_on_deleted_user( $user_id ){
+            global $wpdb;
+            ignore_user_abort(true);
+            set_time_limit(0);
+
+            $messages = $wpdb->get_results( $wpdb->prepare("SELECT id, thread_id FROM `" . bm_get_table('messages') . "` WHERE `sender_id` = %d", $user_id) );
+
+            foreach ( $messages as $message ){
+                Better_Messages()->functions->delete_message( $message->id, $message->thread_id, true, 'replace' );
+            }
         }
 
         public function update_db_if_needed(){

@@ -902,6 +902,33 @@ if (isset($roles['administrator'])) unset($roles['administrator']);
                                         <p style="font-size: 10px;"><?php _ex( 'Allow users to delete their messages only', 'Settings page', 'bp-better-messages' ); ?></p>
                                     </th>
                                 </tr>
+                                <tr valign="top">
+                                    <td style="padding:0"></td>
+                                    <th style="padding:0">
+                                        <table>
+                                            <tbody>
+                                            <tr>
+                                                <td style="padding:0">
+                                                    <input style="vertical-align: middle" id="delete-method-1" type="radio" name="deleteMethod" value="delete" <?php checked( $this->settings[ 'deleteMethod' ], 'delete' ); ?>>
+                                                    <label for="delete-method-1">
+                                                        <?php _ex( 'Delete message completely', 'Settings page', 'bp-better-messages' ); ?>
+                                                        <p style="font-size: 10px;"><?php _ex( 'Delete message completely so it will dissapear from messages list', 'Settings page', 'bp-better-messages' ); ?></p>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding:0">
+                                                    <input style="vertical-align: middle" id="delete-method-2" type="radio" name="deleteMethod" value="replace" <?php checked( $this->settings[ 'deleteMethod' ], 'replace' ); ?>>
+                                                    <label for="delete-method-2">
+                                                        <?php _ex( 'Replace message content', 'Settings page', 'bp-better-messages' ); ?>
+                                                        <p style="font-size: 10px;"><?php _ex( 'Replace message content with "This message was deleted" label', 'Settings page', 'bp-better-messages' ); ?></p>
+                                                    </label>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </th>
+                                </tr>
                                 <tr valign="top" class="">
                                     <td>
                                         <input name="oEmbedEnable" type="checkbox" <?php checked( $this->settings[ 'oEmbedEnable' ], '1' ); ?> value="1" />
@@ -1088,6 +1115,14 @@ if (isset($roles['administrator'])) unset($roles['administrator']);
                                     </td>
                                     <th>
                                         <?php _ex( 'Disable Send on Enter for Desktop devices', 'Settings page','bp-better-messages' ); ?>
+                                    </th>
+                                </tr>
+                                <tr valign="top" class="">
+                                    <td>
+                                        <input name="deleteMessagesOnUserDelete" type="checkbox" <?php checked( $this->settings[ 'deleteMessagesOnUserDelete' ], '1' ); ?> value="1" />
+                                    </td>
+                                    <th>
+                                        <?php _ex( 'Delete user messages when his account is deleted from website', 'Settings page','bp-better-messages' ); ?>
                                     </th>
                                 </tr>
                                 </tbody>

@@ -68,13 +68,13 @@ $alliance_theme_required_plugins        = array(
 		'logo'        => alliance_get_file_url( 'plugins/democracy-poll/democracy-poll.png' ),
 		'group'       => $alliance_theme_required_plugins_groups['other'],
 	),
-	'elegro-payment'             => array(
+/* 	'elegro-payment'             => array(
 		'title'       => esc_html__( 'Elegro Crypto Payment', 'alliance' ),
 		'description' => esc_html__( "Extends WooCommerce Payment Gateways with an elegro Crypto Payment", 'alliance' ),
 		'required'    => false,
 		'logo'        => 'elegro-payment.png',
 		'group'       => $alliance_theme_required_plugins_groups['ecommerce'],
-	),
+	), */
 	'elementor'                  => array(
 		'title'       => esc_html__( 'Elementor', 'alliance' ),
 		'description' => esc_html__( "Is a beautiful PageBuilder, even the free version of which allows you to create great pages using a variety of modules.", 'alliance' ),
@@ -133,13 +133,13 @@ $alliance_theme_required_plugins        = array(
 		'logo'        => 'mailchimp-for-wp.png',
 		'group'       => $alliance_theme_required_plugins_groups['socials'],
 	),
-	'paid-memberships-pro'      => array(
+/*  	'paid-memberships-pro'      => array(
 		'title'       => esc_html__( 'Paid Memberships Pro', 'alliance' ),
 		'description' => '',
 		'required'    => false,
 		'logo'        => alliance_get_file_url( 'plugins/paid-memberships-pro/paid-memberships-pro.png' ),
 		'group'       => $alliance_theme_required_plugins_groups['other'],
-	),
+	), */
 	'buddypress-media'      => array(
 		'title'       => esc_html__( 'rtMedia for WordPress, BuddyPress and bbPress', 'alliance' ),
 		'description' => '',
@@ -168,27 +168,27 @@ $alliance_theme_required_plugins        = array(
 		'logo'        => 'trx_updater.png',
 		'group'       => $alliance_theme_required_plugins_groups['other'],
 	),
-	'woocommerce'                => array(
+ 	'woocommerce'                => array(
 		'title'       => esc_html__( 'WooCommerce', 'alliance' ),
 		'description' => esc_html__( "Connect the store to your website and start selling now", 'alliance' ),
 		'required'    => false,
 		'logo'        => 'woocommerce.png',
 		'group'       => $alliance_theme_required_plugins_groups['ecommerce'],
 	),
-	'wp-job-manager'      => array(
+/* 	'wp-job-manager'      => array(
 		'title'       => esc_html__( 'WP Job Manager', 'alliance' ),
 		'description' => '',
 		'required'    => false,
 		'logo'        => alliance_get_file_url( 'plugins/wp-job-manager/wp-job-manager.png' ),
 		'group'       => $alliance_theme_required_plugins_groups['other'],
 	),
-	'wp-job-manager-resumes'      => array(
+ 	'wp-job-manager-resumes'      => array(
 		'title'       => esc_html__( 'WP Job Manager - Resume Manager', 'alliance' ),
 		'description' => '',
 		'required'    => false,
 		'logo'        => alliance_get_file_url( 'plugins/wp-job-manager-resumes/wp-job-manager-resumes.png' ),
 		'group'       => $alliance_theme_required_plugins_groups['other'],
-	),
+	), */
 	'gutenberg'                  => array(
 		'title'       => esc_html__( 'Gutenberg', 'alliance' ),
 		'description' => esc_html__( "It's a posts editor coming in place of the classic TinyMCE. Can be installed and used in parallel with Elementor", 'alliance' ),

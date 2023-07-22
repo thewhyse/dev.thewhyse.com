@@ -621,6 +621,8 @@ if ( !class_exists( 'Better_Messages_Rest_Api' ) ):
 
             $user_id = Better_Messages()->functions->get_current_user_id();
 
+            $replaceMethod = Better_Messages()->settings['deleteMethod'] === 'replace';
+
             $deleted_messages = [];
             $errors = [];
 
@@ -647,7 +649,17 @@ if ( !class_exists( 'Better_Messages_Rest_Api' ) ):
                 }
             }
 
-            return [ 'deleted' => $deleted_messages, 'errors' => $errors ];
+            $return = [];
+
+            if( $replaceMethod ){
+                $return = Better_Messages()->api->get_messages(null, $deleted_messages);
+            } else {
+                $return['deleted'] = $deleted_messages;
+            }
+
+            $return['errors'] = $errors;
+
+            return $return;
         }
 
         public function delete_thread( WP_REST_Request $request ){

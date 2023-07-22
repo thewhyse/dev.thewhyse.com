@@ -53,6 +53,7 @@ if ( !class_exists( 'Better_Messages_Rest_Api_DB_Migrate' ) ):
             }
 
             $this->drop_tables();
+            $this->delete_bulk_reports();
             $this->first_install();
 
             $settings = get_option( 'bp-better-chat-settings', array() );
@@ -161,6 +162,18 @@ if ( !class_exists( 'Better_Messages_Rest_Api_DB_Migrate' ) ):
             }
 
             return null;
+        }
+
+        public function delete_bulk_reports(){
+            global $wpdb;
+
+            $reports = $wpdb->get_col("SELECT ID FROM {$wpdb->posts} WHERE `post_type` = 'bpbm-bulk-report'");
+
+            if( count($reports) > 0 ){
+                foreach ( $reports as $report ){
+                    wp_delete_post( $report, true );
+                }
+            }
         }
 
         public function drop_tables(){

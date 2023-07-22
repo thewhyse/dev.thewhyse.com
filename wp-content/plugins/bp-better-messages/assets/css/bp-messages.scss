@@ -265,6 +265,10 @@ body.bm-messages-light{
     line-height: normal;
     font-weight: normal;
 
+    .bm-deleted-message{
+      opacity: 0.5;
+    }
+
     .bm-inline-whitespace{
         width: 0 !important;
         display: inline-block !important;
@@ -3609,6 +3613,7 @@ body.bp-messages-mobile .bm-medium-editor-mention-panel{
 
     .bm-last-message-avatar{
         min-width: 15px;
+        max-width: 15px;
         margin-right: 5px;
     }
 
@@ -9873,7 +9878,7 @@ body.bm-mobile-device-pwa.bp-messages-mobile {
     top: 0;
     height: 100%;
     width: 100%;
-    background: rgb(255,255,255,0.9);
+    background: rgb(255,255,255,0.95);
 
     .bm-guest-wall-content{
         margin-top: 50px;

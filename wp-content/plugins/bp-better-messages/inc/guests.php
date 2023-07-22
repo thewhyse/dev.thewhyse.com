@@ -154,7 +154,7 @@ if ( !class_exists( 'Better_Messages_Guests' ) ):
 
         public function rest_api_init(){
             register_rest_route( 'better-messages/v1', '/guests/register', array(
-                'methods' => 'GET',
+                'methods' => 'POST',
                 'callback' => array( $this, 'register' ),
                 'permission_callback' => function() {
                     return ! is_user_logged_in();
@@ -235,12 +235,15 @@ if ( !class_exists( 'Better_Messages_Guests' ) ):
 
             return $return;
         }
+
         public function register( WP_REST_Request $request ){
             global $wpdb;
 
             $secret = $this->random_string( 30 );
 
             $generator = new \BetterMessages\RandomNameGenerator\Alliteration();
+
+            $registerData = $request->has_param('registerData') ? $request->get_param('registerData') : null;
 
             $name = apply_filters( 'better_messages_generated_guest_name', $generator->getName() );
 

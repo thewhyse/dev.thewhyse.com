@@ -277,8 +277,13 @@ if ( !class_exists( 'Better_Messages_Functions' ) ):
             do_action( 'better_messages_thread_cleared', $thread_id );
         }
 
-        public function delete_message( $message_id, $thread_id = false, $process_unread = true ){
+        public function delete_message( $message_id, $thread_id = false, $process_unread = true, $deleteMethod = null ){
             global $wpdb;
+
+
+            if( ! $deleteMethod ) {
+                $deleteMethod = Better_Messages()->settings['deleteMethod'];
+            }
 
             if( $process_unread ) {
                 $decrease_unread = [];
@@ -290,7 +295,9 @@ if ( !class_exists( 'Better_Messages_Functions' ) ):
                 if ($thread_id !== false) {
                     $recipients = $this->get_recipients($thread_id);
 
-                    do_action('bp_better_messages_message_deleted', $message_id, array_keys($recipients));
+                    if( $deleteMethod === 'delete' ) {
+                        do_action('bp_better_messages_message_deleted', $message_id, array_keys($recipients));
+                    }
 
                     unset($recipients[Better_Messages()->functions->get_current_user_id()]);
 
@@ -330,10 +337,23 @@ if ( !class_exists( 'Better_Messages_Functions' ) ):
                 wp_delete_attachment( $attachment_id, true );
             }
 
-            $sql = $wpdb->prepare("DELETE FROM " . bm_get_table('messages') . " WHERE id = %d", $message_id);
-            $wpdb->query( $sql );
-            $sql = $wpdb->prepare("DELETE FROM " . bm_get_table('meta') . " WHERE bm_message_id = %d", $message_id);
-            $wpdb->query( $sql );
+            if( $deleteMethod === 'replace' ) {
+                $message = new BM_Messages_Message( $message_id );
+
+                Better_Messages()->functions->update_message([
+                    'sender_id'    => $message->sender_id,
+                    'thread_id'    => $thread_id,
+                    'message_id'   => $message_id,
+                    'content'      => '<!-- BM-DELETED-MESSAGE -->',
+                    'send_push'    => false,
+                    'count_unread' => false
+                ]);
+            } else {
+                $sql = $wpdb->prepare("DELETE FROM " . bm_get_table('messages') . " WHERE id = %d", $message_id);
+                $wpdb->query($sql);
+                $sql = $wpdb->prepare("DELETE FROM " . bm_get_table('meta') . " WHERE bm_message_id = %d", $message_id);
+                $wpdb->query($sql);
+            }
 
             if( $process_unread ) {
                 if (count($decrease_unread) > 0) {

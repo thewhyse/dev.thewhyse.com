@@ -6829,6 +6829,9 @@ body.bm-messages-light .bm-emoji-picker-container {
    * Animations
    */
 }
+.bp-messages-wrap .bm-deleted-message {
+  opacity: 0.5;
+}
 .bp-messages-wrap .bm-inline-whitespace {
   width: 0 !important;
   display: inline-block !important;
@@ -9722,6 +9725,7 @@ body.bp-messages-mobile .bm-medium-editor-mention-panel {
 }
 .bp-messages-wrap .threads-list .thread .bm-info .last-message .bm-last-message-avatar {
   min-width: 15px;
+  max-width: 15px;
   margin-right: 5px;
 }
 .bp-messages-wrap .threads-list .thread .bm-info .last-message .bm-last-message-content > br + br {
@@ -15231,7 +15235,7 @@ body.bm-mobile-device-pwa.bp-messages-mobile #bp-better-messages-mini-mobile-con
   top: 0;
   height: 100%;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
 }
 .bm-guest-wall .bm-guest-wall-content {
   margin-top: 50px;
