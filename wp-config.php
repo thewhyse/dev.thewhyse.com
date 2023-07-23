@@ -1,5 +1,7 @@
 <?php
 
+define( 'WP CACHE', true );
+
 /**
  * This config file is yours to hack on. It will work out of the box on Pantheon
  * but you may find there are a lot of neat tricks to be used here.
@@ -39,23 +41,17 @@ if (file_exists(dirname(__FILE__) . '/wp-config-pantheon.php') && isset($_ENV['P
 	define('DB_HOST',          'database_host');
 	define('DB_CHARSET',       'utf8');
 	define('DB_COLLATE',       '');
-	define('AUTH_KEY',         'put your unique phrase here');
-	define('SECURE_AUTH_KEY',  'put your unique phrase here');
-	define('LOGGED_IN_KEY',    'put your unique phrase here');
-	define('NONCE_KEY',        'put your unique phrase here');
-	define('AUTH_SALT',        'put your unique phrase here');
-	define('SECURE_AUTH_SALT', 'put your unique phrase here');
-	define('LOGGED_IN_SALT',   'put your unique phrase here');
-	define('NONCE_SALT',       'put your unique phrase here');
+	define('AUTH_KEY',         ']EW,]2+`VZn_sL1I^YMk;RH2-+6>W>/0&uY>xYlD@aQRkUboP83muY~3S*iZJ_@2');
+	define('SECURE_AUTH_KEY',  'n)$3@3SfM|=;NcQ{rwq$L%j{xfYPod=INry2?<>.wnj-W|a!WbWyJ?F^[&8#yyqN');
+	define('LOGGED_IN_KEY',    '{eNC <sE^sH5^~1_KbnKQM.#>UT}|fnWM;+[52tX/MRx} W6-SK}aJ?iWjvs=2T/');
+	define('NONCE_KEY',        ' 3,^_#~-|w%qBV^5q^4495c!aaWA[BPeQ7bxkoKiYJ#s>0|PP8P}y8-+jRso&Sqw');
+	define('AUTH_SALT',        'k)TOpc1vSph;8&Z2QciT*rfT6O[A71%XOKATm3.YeZZZSBOpM:*!8p|fU[x(s^k|');
+	define('SECURE_AUTH_SALT', 'o[[-eO]U,-+E76DC@X!Y#=9%$detrEZBo(i .-|7l%i+4~+dwki}93Iy--?/=C-O');
+	define('LOGGED_IN_SALT',   '.V;dQ }s#S9^JW^|7fW:b/u`:1<nE<vl?1XHfS|$U|Go(m$Cb!MWsf-% DC4Sx*4');
+	define('NONCE_SALT',       'F|BF+{;rNlb|!edhtJ2sEVff~xy6(52a<QM-^/*#VvRE-S4cZ$&a,n8h-fZJ7l!G');
 }
 
-/** Standard wp-config.php stuff from here on down. **/
-/**
- * WordPress Database Table prefix.
- *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
- */
+define('WP_CACHE_KEY_SALT', 'dev-the-agency-development.pantheonsite.io');
 
 $table_prefix = 'wp_';
 
@@ -74,15 +70,17 @@ if ( ! defined( 'WP_DEBUG' ) ) {
 	define( 'WP_DEBUG', false );
 }
 
-define( 'WP CACHE', true );
+define( 'WP_DEBUG_LOG', false );
+define( 'WP_DEBUG_DISPLAY', false );
+@ini_set( 'display_errors', 0 );
+define( 'SCRIPT_DEBUG', false );
+
 define( 'WP_MEMORY_LIMIT', '1024M' );
+define( 'WP_MAX_MEMORY_LIMIT', '1024M' );
+
 define( 'PH_SECURE_AUTH_KEY', ' v1E?+m%~?Nv&pMaDQAR9-R7d+47A6zJ,m2Vc*-st8wC01P2GES;z,_cgF^< lKN' );
 
-/* That's all, stop editing! Happy Pressing. */
-
-/** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
