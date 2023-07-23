@@ -21,15 +21,114 @@ body.menu_side_present .footer_wrap {
 
 .sc_layouts_menu_item_description {
     display: block;
-    margin-top: -2px;
+    margin-top: -1px;
     font-size: 8px;
     line-height: 8px;
     white-space: normal;
     margin-left: 4px;
+    letter-spacing: 1px;
 }
 .menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"]:before {
     box-shadow: 0px 0px 15px #00000025;
     -webkit-border-radius: 100%;
     -ms-border-radius: 100%;
     border-radius: 100%;
+}
+table.el-date-table th {
+    font-size: 13px;
+}
+div.content div.post_content_title {
+    margin-bottom: calc(var(--theme-var-grid_gap) + (var(--theme-var-grid_gap_koef) * 1px));
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+div.ph-dashboard.project-huddle .ph-timeline-event__action {
+    padding: 0 12px 0 0;
+}
+div.ph-dashboard.project-huddle .ph-timeline-event {
+    width: 92%;
+    border: 1px solid #eee;
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 4%;
+    background-color: #f8f8f8;
+}
+div.ph-dashboard.project-huddle .ph-timeline-event__quote {
+    background: #e8e8e8;
+}
+div.ph-dashboard.project-huddle .ph-timeline-event__summary--meta a {
+    text-decoration: underline;
+}
+div.ph-dashboard.project-huddle .el-card {
+        border-radius: 15px;
+}
+
+div.ph-dashboard.project-huddle .el-tooltip .ph-timeline-event__time .item {
+        background-color: var(--theme-color-accent_link);
+        color: #fff;
+        width: 18px;
+        text-align: center;
+        border-radius: 3px;
+}
+div.ph-timeline-event__meta--left a.ph-timeline-event__action svg.el-tootip,
+div.ph-timeline-event__meta--left div.ph-timeline-event__action svg.el-tootip {
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+    padding: 5px;
+    border-radius: 100%;
+}
+div.ph-dashboard.project-huddle .el-range-editor--small.el-input__inner {
+    border-radius: 50px;
+}
+
+div.ph-dashboard.project-huddle ul.el-menu.el-menu--horizontal {
+    border: none;
+    border-radius: 15px;
+}
+
+div.ph-dashboard.project-huddle .el-menu .el-menu-item {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0;
+    text-transform: capitalize;
+    font-family: Outfit, sans-serif;
+}
+
+.el-pagination.is-background .btn-next,
+.el-pagination.is-background .btn-prev,
+.el-pagination.is-background .el-pager li {
+    border-radius: 100%;
+}
+
+div.ph-dashboard.project-huddle .ph-content-admin-wrap {
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+div.ph-dashboard.project-huddle .ph-project-shortcode-wrap {
+    margin: auto;
+    max-width: 100%;
+}
+div.ph-dashboard.project-huddle .ph-project-header__status {
+        min-width: 250px;
+        background-color: #fafafa;
+        border-radius: 15px;
+        padding: 15px;
+}
+div.ph-dashboard.project-huddle .ph-activity-feed,
+div.ph-dashboard.project-huddle .ph-activity-feed__timeline.el-timeline {
+    max-width: 100%;
+}
+
+div#buddypress #item-header #item-header-cover-image #item-header-avatar img.avatar {
+    border-radius: 100%;
+}
+.epkb-doc-search-container .eckb_search_on_main_page {
+    padding-bottom: 30px;
+    border-radius: 15px;
+}
+.post_content_title .sc_layouts_subtitle_caption {
+    text-transform: lowercase;
+    letter-spacing: -0.25px;
 }
