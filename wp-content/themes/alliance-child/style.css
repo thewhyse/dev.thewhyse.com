@@ -27,9 +27,7 @@ body.menu_side_present .footer_wrap {
     white-space: normal;
     margin-left: 4px;
 }
-.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-item:before,
-.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-parent:before,
-.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"].current-menu-ancestor:before {
+.menu_mobile .menu_mobile_nav_area > ul > .menu-item[class*="icon-"]:before {
     box-shadow: 0px 0px 15px #00000025;
     -webkit-border-radius: 100%;
     -ms-border-radius: 100%;

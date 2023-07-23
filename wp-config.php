@@ -1,6 +1,7 @@
 <?php
 
 define( 'WP CACHE', true );
+define('DISABLE_WP_CRON', false);
 
 /**
  * This config file is yours to hack on. It will work out of the box on Pantheon
@@ -79,6 +80,7 @@ define( 'WP_MEMORY_LIMIT', '1024M' );
 define( 'WP_MAX_MEMORY_LIMIT', '1024M' );
 
 define( 'PH_SECURE_AUTH_KEY', ' v1E?+m%~?Nv&pMaDQAR9-R7d+47A6zJ,m2Vc*-st8wC01P2GES;z,_cgF^< lKN' );
+
 
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
