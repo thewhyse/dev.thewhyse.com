@@ -26,4 +26,40 @@ function whyse_allowed_ph_styles( $allowed ) {
 }
 add_filter( 'ph_allowed_styles', 'whyse_allowed_ph_styles' );
 
+// Project Huddle - filter plugin settings
+add_filter( 'ph_settings_extensions', 'whyse_github_extension_plugin_settings' );
+
+
+// Project Huddle - add GitHub Repo settings
+function whyse_github_extension_plugin_settings($settings) {
+	// add fields
+
+	// divider with title
+	$settings['fields'][] = array(
+		'id'          => 'highlight_divider',
+		'label'       => __( 'GitHub Repository', 'dev-whyse' ),
+		'description' => '',
+		'type'        => 'divider',
+	);
+
+	// see all field types in includes/admin/settings/settings-fields.php
+
+    // text box example
+	$settings['fields'][] = array(
+		'id'          => 'whyse_github_extension_text_box',
+		'label'       => __( 'Repository URL', 'dev-whyse' ),
+		'description' => __( 'To associate a GitHub repostory with this project, paste or enter it here.', 'dev-whyse' ),
+		'type'        => 'text',
+		'default'     => '',
+		'placeholder' => __( 'Project GitHub URL here...', 'dev-whyse' ),
+	);
+	return $settings;
+}
+
+
+/**
+ * Get our options
+ */
+$text_box = get_option('ph_whyse_github_extension_text_box');
+
 ?>

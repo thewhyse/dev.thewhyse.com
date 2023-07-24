@@ -13,12 +13,27 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 /* Theme customization starts here
 -------------------------------------------------------------- */
-
+div#login form .loginmmessage {
+    display: none;
+}
+#wp-auth-check-wrap .wp-auth-check-close {
+    right: 10px;
+}
+#wp-auth-check-wrap #wp-auth-check {
+    border-radius: 20px;
+}
+.interim-login #login {
+    padding: 25px;
+}
 body.menu_side_present .footer_wrap {
     padding-left: 0;
     padding-right: 0;
 }
-
+.loginlogo {
+    width: 85%;
+    margin-top: 25px;
+    border-radius: 15px;
+}
 .sc_layouts_menu_item_description {
     display: block;
     margin-top: -1px;
