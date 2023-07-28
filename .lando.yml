@@ -1,0 +1,6 @@
+name: the-agency-development
+recipe: pantheon
+config:
+  framework: wordpress
+  site: the-agency-development
+  id: bff3df98-f250-41a0-8c41-dada2214eb70
